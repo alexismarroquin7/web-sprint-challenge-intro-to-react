@@ -1,37 +1,13 @@
 // Write your Character component here
-import React, {useEffect} from 'react';
-
+import React from 'react';
 const Character = (props) => {
 
-    const {characters, setCharacters} = props;
-
-    useEffect(() => {
-        const getCharacters = () => {
-          axios.get(`${BASE_URL}${API_KEY}`)
-          .then(res => {
-            setCharacters(res.data);
-          })
-          .catch(err => {
-            console.log(err)
-          })
-        }
-        getCharacters();
-      }, [])
+    const {characters} = props;
 
     return (
-        <div>
-            Characters
+        <div className="Character">
         </div>
     )
-    // characters.map(character => {
-    //     return (
-    //         <div className="character">
-    //             <h1>
-    //                 {character.name}
-    //             </h1>
-    //         </div>
-    //     )
-    // });
 }
 
 export default Character;
