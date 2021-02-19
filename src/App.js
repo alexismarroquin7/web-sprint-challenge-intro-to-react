@@ -6,9 +6,21 @@ import Character from './components/Character'
 import styled from 'styled-components'
 
 const StyledApp = styled.div`
+  @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+  * {
+    font-family: 'Squada One', cursive;
+  }
   width:100%;
   display:flex;
+  flex-flow:row wrap;
+  align-items:center;
 
+  h1.title {
+    width:100%;
+    font-size:4.5rem;
+
+  }
 `
 
 const App = () => {
@@ -38,6 +50,7 @@ const App = () => {
 
   return (
     <StyledApp className="App">
+      <h1 className="title">SPRINT WARS</h1>
       {characters &&  characters.map(char => <Character key={char.birth_year} character={char}/>)}
     </StyledApp>
   );

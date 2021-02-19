@@ -30,11 +30,22 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
+React JS attempts to make applications easier to scale by using Components. React also allows for more efficient prototyping / production even with a large amounts of data because components are dynamic.
+
 1. Describe component state.
+
+Component state is an object that saves a value updated with the useState hook.
+What we see on the screen / What gets rendered is dependent on component state's value.
 
 1. Describe props.
 
+Props are similar to parameters in that they are passed into components as an input.
+Props are only passed from parent components down to the children.
+
 1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+Side effects affect code outside of its scope. An example is waiting for a GET request and the program stalls at the same line. To avoid this React uses a useEffect hook with allows for asynchronous code to be executed when desired. React makes it easy by being able to specify when to run the useEffect hook by
+adding a second argument, after the callback. The second argument can be an empty list for it to run on render or you may specify a component state useEffect to only execute when one or more items is changed.
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
