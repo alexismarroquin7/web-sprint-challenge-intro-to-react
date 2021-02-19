@@ -3,12 +3,21 @@ import './App.css';
 import axios from 'axios';
 import {BASE_URL, API_KEY} from './constants'
 import Character from './components/Character'
+import styled from 'styled-components'
+
+const StyledApp = styled.div`
+  width:100%;
+  display:flex;
+
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
-  const [characters, setCharacters] = useState({});
-  const [current, setCurrent] = useState(null);
+
+  const [characters, setCharacters] = useState([]);
+  const [current, setCurrent] = useState({});
+
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
@@ -25,12 +34,12 @@ const App = () => {
     fetchCharacters();
   }, [])
 
-  // console.log(characters)
+  console.log(characters)
 
   return (
-    <div className="App">
-      <Character characters={characters}/>
-    </div>
+    <StyledApp className="App">
+      {characters &&  characters.map(char => <Character key={char.birth_year} character={char}/>)}
+    </StyledApp>
   );
 }
 

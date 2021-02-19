@@ -1,25 +1,27 @@
 // Write your Character component here
 import React, {useState} from 'react';
-import axios from 'axios';
+import styled from 'styled-components';
 
+const StyledDiv = styled.div`
+    width:25%;
+    border:1px solid white;
+    color:white;
+    margin:2%;
+
+`
 
 const Character = (props) => {
-
-    const {characters} = props;
-
-    const Card = () => {
-        if(characters){
-            return <ul>{}</ul>
-        }    
-        return <div>No characters loaded</div>
-    }
-
+    
+    const {character} = props;
 
     return (
-        <div className="Character">
-            <h1>Character</h1>
-            <Card />
-        </div>
+        <StyledDiv className="Character">
+            <h1 className="Name">{character.name}</h1>
+            <h1 className="Name">{character.birth_year}</h1>
+            <h1 className="Name">{character.gender}</h1>
+            <h1 className="Name">{character.hair_color}</h1>
+            <h1 className="Name">{character.height}</h1>
+        </StyledDiv>
     )
 }
 
